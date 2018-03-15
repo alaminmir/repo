@@ -1,0 +1,10 @@
+var newContent = '<h1>I am the new content</h1>';
+
+$(document).on('click','button',function () {
+  $(this).parents('.single').remove();
+  $('.single:only-child').find('button').addClass('last-button');
+ });
+
+ $(document).on('click','.last-button',function () {
+  $(newContent).appendTo('.divlist');
+  });
