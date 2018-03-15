@@ -1,4 +1,7 @@
-$(document).on('click','button',function () {
+<script>
+		var newSection = '<div class="single">Aute sunt elit consectetur magna do incididunt ex ullamco sint eiusmod ipsum nisi Lorem eu.<button>Remove</button></div>';
+		var newContent = '<h1>I am the new content</h1>';
+		$(document).on('click','button',function () {
 			$(this).parents('.single').remove();
 			$('div.single:only-child').find('button').addClass('last-button');
 		 });
@@ -8,12 +11,14 @@ $(document).on('click','button',function () {
 				$('.single').find('button').addClass('last-button');
 			}
 		});
-
 		 $(document).on('click','.btn-add',function () {
 			$(newSection).insertAfter($('.divlist .single').last());
 			$('.single').find('.last-button').removeClass();
+			if($('.single').is('.single:gt(3)')){
+				alert(1);
+			}
 		  });
-
 		 $(document).on('click','.last-button',function () {
 			$(newContent).appendTo('.divlist');
 		  });
+	</script>
